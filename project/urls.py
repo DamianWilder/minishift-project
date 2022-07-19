@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.conf.urls import include, url
-from django.urls import path
 from django.contrib import admin
 
 from welcome.views import index, health
@@ -13,9 +12,7 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
-    path("", include("welcome.urls")),
-    path("admin/", admin.site.urls),
-    path("chexmix/", include("welcome.urls")),
+    url(r"^chexmix/", include("welcome.urls")),
 ]
 
 if settings.DEBUG:
