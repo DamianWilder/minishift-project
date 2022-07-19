@@ -75,7 +75,13 @@ def calculate_chex(request):
                     response += f" {'':2}{Fraction(sauce_ratio[k])} Teaspoons"
             response += " \n"
         context["calculation"] = response.split("\n")
-        return render(request, "chex_calculation.html", context)
+        return render(request, "welcome/chex_calculation.html", context)
     except:
         pass
-        return render(request, "hello.html", {"name": "Damain"})
+        hostname = os.getenv('HOSTNAME', 'unknown')
+        PageView.objects.create(hostname=hostname)
+        return render(request, 'welcome/index.html', {
+        'hostname': hostname,
+        'database': database.info(),
+        'count': PageView.objects.count()
+    })
