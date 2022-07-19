@@ -1,9 +1,9 @@
-from django.urls import path
+from django.conf.urls import include, url
 from . import views
 
 # url conf module
 urlpatterns = [
-    path("", views.index),
-    path("index/", views.index),
-    path("calculate/", views.calculate_chex),
+    url(r'^$', views.index),
+    url(r"^index/", views.index),
+    url(r"^calculate/", views.calculate_chex),
 ]
