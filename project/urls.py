@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from welcome.views import index, health
+from welcome.views import index, health, calculate_chex
 
 urlpatterns = [
     # Examples:
@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
     url(r"^chexmix/", include("welcome.urls")),
-    url(r"^calculate/", include("welcome.urls")),
+    url(r"^calculate/", calculate_chex),
 ]
 
 if settings.DEBUG:
