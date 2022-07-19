@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
     url(r"^chexmix/", include("welcome.urls")),
+    url(r"^calculate/", include("welcome.urls")),
 ]
 
 if settings.DEBUG:
