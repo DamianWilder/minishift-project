@@ -34,14 +34,18 @@
 </style>
 
 <body>
-  {% if calculation %}
-  {% for line in calculation %}
-  {{ line }}<br>
-  {% endfor %}
-  {% endif %}
-  <form name="home" action="../">
-    <input type="submit" value="Home">
-  </form>
+  <div class="bodycontent">
+    <div class="measurements">
+      {% if calculation %}
+      {% for line in calculation %}
+      {{ line }}<br>
+      {% endfor %}
+      {% endif %}
+    </div>
+    <form name="home" action="../">
+      <input type="submit" value="Home">
+    </form>
+  </div>
 </body>
 
 </html>
